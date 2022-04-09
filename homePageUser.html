@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="4506.css">
+    <title>homepage</title>
+    <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".form-container").hide();
+        $("#createAc").click(function(){ 
+            $(".form-container").show();
+            document.getElementById('blur').style.filter = 'blur(10px)';
+        });
+        $("#close").click(function(){ 
+          $(".form-container").hide();
+            document.getElementById('blur').style.filter = 'none';
+        });
+        $(".district").click(function(){ 
+          var district = document.getElementsByName('district');
+          for(i=1;i<=3;i++){
+            if(district[i].checked==true){
+             unchecked(district[0]);
+            }
+          }
+        });
+        $("#dAll").click(function(){ 
+          var district = document.getElementsByName('district');
+          for(i=1;i<=3;i++){
+            if(district[0].checked==true){
+             unchecked(district[i]);
+            }
+          }
+        });
+        $(".size").click(function(){ 
+          var size = document.getElementsByName('size');
+          for(i=1;i<=3;i++){
+            if(size[i].checked==true){
+             unchecked(size[0]);
+            }
+          }
+        });
+        $("#sAll").click(function(){ 
+          var size = document.getElementsByName('size');
+          for(i=1;i<=3;i++){
+            if(size[0].checked==true){
+             unchecked(size[i]);
+            }
+          }
+        });
+          $(".price").click(function(){ 
+            var price = document.getElementsByName('price');
+            for(i=1;i<=3;i++){
+              if(price[i].checked==true){
+                unchecked(price[0]);
+              }
+            } 
+          });
+          $("#pAll").click(function(){ 
+          var price = document.getElementsByName('price');
+          for(i=1;i<=3;i++){
+            if(price[0].checked==true){
+             unchecked(price[i]);
+            }
+          }
+        });
+        $("#search").click(function(){ 
+          var distract = document.getElementsByName('district');
+          if(distract[0].checked==true){
+            $(".proprety").show();
+          }
+          if(distract[1].checked==true){
+            $(".proprety").hide();
+            $("#pOne").show();
+            $("#pThree").show();
+            $("#pEight").show();
+          }
+          if(distract[2].checked==true){
+            $(".proprety").hide();
+            $("#pOne").show();
+            $("#pThree").show();
+            $("#pEight").show();
+            $("#pTwo").show();
+            $("#pFour").show();
+            $("#pSix").show();
+          }
+          if(distract[3].checked==true){
+            $(".proprety").hide();
+            $("#pFive").show();
+            $("#pSeven").show();
+          }
+          var size = document.getElementsByName('size');
+          if(size[1].checked==true){
+            $(".proprety").hide();
+            $("#pFour").show();
+            $("#pFive").show();
+            $("#pSix").show();
+          }  
+        });   
+        $("#btnLogOut").click(function(){  
+          alert("Log out successful");
+          window.location.assign("homePage.html");    
+        });  
+      });
+      function unchecked(x){
+        var seleceted = x;
+          if(seleceted.checked==true){
+            x.checked=false;
+          }
+      }
+  </script>
+</head>
+<body>
+  <div class="blur" id="blur">
+    <div id="big">
+      <a href="homePageUser.html"><img id="icon" src="photo/2.png" /></a>
+      <div id="space"></div>
+      <div class ="logInName">
+          <div><a>Welcome!</a></div>
+          <div><a id="mainName">Albert</a></div>
+          <div><button id="btnLogOut">log out</button></div>
+    </div> 
+  </div>
+  <div id="menuBar">
+    <div><a href="profile_user.html"><button class="menuBtn"> change profile</button></a></div>
+  </div>
+    <div id="big2">
+     <div id="divSearch">
+        <table>
+            <tr> 
+                <th>District:</th>
+                <td><a><input type="checkbox" name="district" value="all" id="dAll" checked>all</a></td>
+                <td><a><input type="checkbox" name="district" value="nt" class="district">New terri</a></td>
+                <td><a><input type="checkbox" name="district" value="kn" class="district">Kowloon</a></td>
+                <td><a><input type="checkbox" name="district" value="hk" class="district">Hong Kong Island</a></td>
+            </tr>
+            <tr>
+                <th>Size:</th>
+                <td><a><input type="checkbox" name="size" value="all" id="sAll"checked>all</a></td>
+                <td><a><input type="checkbox" name="size" value="large" class="size">Small</a></td>
+                <td><a><input type="checkbox" name="size" value="medium" class="size">Medium</a></td>
+                <td><a><input type="checkbox" name="size" value="small" class="size">Large</a></td>
+            </tr>
+            <tr>
+                <th>Price:</th>
+                <td><a><input type="checkbox" name="price" value="all" id="pAll" checked>all</a></td>
+                <td><a><input type="checkbox" name="price" value="nt" class="price">above 10,000,000</a></td>
+                <td><a><input type="checkbox" name="price" value="kn" class="price">10,000,000 ~ 5,000,000</a></td>
+                <td><a><input type="checkbox" name="price" value="hk" class="price">below 5,000,000</a></td>
+            </tr>
+            <tr>
+              <th>Search</th>
+              <td><a><img id="search" src="search-icon.png" /></a></td>
+          </tr>
+        </table>
+     </div>
+    </div>   
+    <div id="first">
+      <div class="proprety" id="pOne">
+        <a href="propertyDetail_user.html"><img  src="photo/1.jpg" /></a>
+        <p><a>New Territories</a></p>
+        <p><a>The Pavilia Farm</a></p>
+        <p><a>582"</a></p>
+        <p><a>8,000,000</a></p>
+      </div>
+      <div class="proprety" id="pTwo">
+          <img src="photo/2.jpg" />
+          <p><a>Kowloon</a></p>
+          <p><a>Marini</a></p>
+          <p><a>750"</a></p>
+          <p><a>62,918,471</a></p>
+      </div>
+      <div class="proprety" id="pThree">
+          <img src="photo/3.jpg" />
+          <p><a>New Territories</a></p>
+        <p><a>The Entrance</a></p>
+        <p><a>720"</a></p>
+        <p><a>62,910,295</a></p>
+      </div>
+     <div class="proprety" id="pFour">
+          <img class="NewT" src="photo/4.jpg" />
+          <p><a>Kowloon</a></p>
+        <p><a>Timber House</a></p>
+        <p><a>360"</a></p>
+        <p><a>59,204,021</a></p>
+      </div>
+      <div class="proprety" id="pFive">
+        <img src="photo/5.jpg" />
+        <p><a>Hong Kong Island</a></p>
+        <p><a>Central</a></p>
+        <p><a>250"</a></p>
+        <p><a>8,000,000</a></p>
+      </div>
+      <div class="proprety" id="pSix">
+          <img src="photo/6.jpg" />
+          <p><a>Kowloon</a></p>
+        <p><a>The Vantage</a></p>
+        <p><a>520"</a></p>
+        <p><a>68,402,059</a></p>
+      </div>
+      <div class="proprety" id="pSeven">
+          <img src="photo/7.jpg" />
+          <p><a>Hong Kong Island</a></p>
+        <p><a>Wan Chai</a></p>
+        <p><a>720"</a></p>
+        <p><a>8,000,000</a></p>
+      </div>
+     <div class="proprety" id="pEight">
+        <img src="photo/8.jpg" />
+        <p><a>New Territories</a></p>
+        <p><a>Crescent Green</a></p>
+        <p><a>421"</a></p>
+        <p><a>69,124,241</a></p>
+      </div>
+    </div>
+    </div>
+    <div class="form-popup" id="myForm">
+      <form action="" class="form-container">
+        <button id="close"></button>
+        <h1>New Property Agent</h1>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email1" required>
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+        <label for="name"><b>Age</b></label>
+        <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+        <label for="name"><b>PhoneNumber</b></label>
+        <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="pw" id="pw1" required>
+    
+        <button  class="btn" id="signup">Create</button>
+      </form>
+    </div>
+</body>
+</html>

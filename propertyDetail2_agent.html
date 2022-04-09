@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="4506_property.css">
+    <title>propertyDetail</title>
+    <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $(".form-container").hide();
+        $("#createAc").click(function(){ 
+            $(".form-container").show();
+            document.getElementById('blur').style.filter = 'blur(10px)';
+        });
+        $("#close").click(function(){ 
+          $(".form-container").hide();
+            document.getElementById('blur').style.filter = 'none';
+        });
+        $("#form").hide();
+        $("#displayPhoto1").click(function(){ 
+            $("#mainPhoto").src="photo/2.jpg";
+        }); 
+      });
+  </script>
+</head>
+<body>
+  <div class="blur" id="blur">
+    <div id="big">
+      <a href="propertyIncharge.html"><img id="icon" src="photo/2.png" /></a>
+      <div id="space"></div>
+      <div class ="logInName" >
+          <div><a>Welcome!</a></div>
+          <div><a id="mainName">WuChiHo</a></div>
+          <div><button id="btnLogOut">log out</button></div>
+    </div> 
+  </div> 
+  </div>
+  <div id="menuBar">
+    <div><a href="profile_agent.html"><button class="menuBtn">change profile</button></a></div>
+    <div><a href="new_property.html"><button class="menuBtn">create new property</button></a></div>
+    <div><a href="PropertyAgentcm_agent.html"><button class="menuBtn">view user comment</button></a></div>          
+</div>
+
+<h1>Tai Po    Hampstead  350"</h1>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14751.1064788534!2d114.182265!3d22.437432!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa534794211b3c393!2z55qH5b6h5bGx!5e0!3m2!1szh-TW!2shk!4v1602833796937!5m2!1szh-TW!2shk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" id="location"></iframe>
+<div id="first">
+  <div class="proprety" id="pOne">
+    <table id="propertyDetail">
+      <tr>
+        <th>Status</th>
+        <td>Sold</td>
+      </tr>
+      <tr>
+        <th>Selling Status</th>
+        <td>Rental</td> 
+      </tr>
+      <tr>
+        <th>Owner Name</th>
+        <td>Jaw Wai Kwong</td>
+      </tr>
+      <tr>
+        <th>Building Age</th>
+        <td>30 year</td>
+      </tr>
+      <tr>
+        <th>Floor</th>
+        <td>16/F</td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td>Hampstead (Tai Po)</td>
+      </tr>
+      <tr>
+        <th>Square Feet</th>
+        <td>350"</td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td>68,272,912</td>
+      </tr>
+      <tr>
+        <th>Agent Incharge</th>
+        <td>Wu Chi Ho(<a href="PropertyAgentcm_agent.html"> view comment</a>)</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>6249 1824</td>
+      </tr>
+      <tr>
+        <th>Duration on Sale</th>
+        <td>17-9-2020</td>
+      </tr>
+      <tr>
+        <th>Discount</th>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <th>Descriptions</th>
+        <td>close to MTR stations</td>
+      </tr>
+    </table>
+    <button id="propertyChange">update</button>
+  </div>
+  <img id="mainPhoto" src="photo/9.jpg" />
+
+  <div id="multiPhoto">
+    <div>
+      <img id="displayPhoto1"  onclick="document.getElementById('mainPhoto').src='photo/13.jpg'" src="photo/13.jpg" />
+    </div>
+    <div>
+      <img id="displayPhoto2"  onclick="document.getElementById('mainPhoto').src='photo/14.jpg'" src="photo/14.jpg" />
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container">
+    <button id="close"></button>
+    <h1>New Property Agent</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email1" required>
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="name"><b>Age</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="name"><b>PhoneNumber</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pw" id="pw1" required>
+
+    <button  class="btn" id="signup">Create</button>
+  </form>
+</div>
+</body>
+</html>

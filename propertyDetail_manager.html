@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="4506_property.css">
+    <title>propertyDetail</title>
+    <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $(".form-container").hide();
+        $("#createAc").click(function(){ 
+            $(".form-container").show();
+            document.getElementById('blur').style.filter = 'blur(10px)';
+        });
+        $("#close").click(function(){ 
+          $(".form-container").hide();
+            document.getElementById('blur').style.filter = 'none';
+        });
+        $("#form").hide();
+        $("#displayPhoto1").click(function(){ 
+            $("#mainPhoto").src="photo/2.jpg";
+        }); 
+      });
+  </script>
+</head>
+<body>
+  <div class="blur" id="blur">
+    <div id="big">
+      <a href="homePageManager.html"><img id="icon" src="photo/2.png" /></a>
+      <div id="space"></div>
+      <div class ="logInName" >
+          <div><a>Welcome!</a></div>
+          <div><a id="mainName">tony</a></div>
+          <div><button id="btnLogOut">log out</button></div>
+    </div> 
+  </div>
+  <div id="menuBar">
+    <div><a href="profile_manager.html"><button class="menuBtn">profile</button></a></div>
+    <div><button class="menuBtn" id="createAc">Create Account</button></div>
+    <div class="dropdown">
+      <button class="menuBtn">View</button>
+      <div class="dropdown-content">
+        <a href="user_Information.html">user information</a>
+        <a href="agent_Information.html">Property Agent</a>
+      </div>
+    </div>
+  </div>
+
+<h1>Sha Tin    The Pavilia Farm    582"</h1>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1845.9398777990725!2d114.19285870722491!3d22.282544307782175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040104276d1e33%3A0x70c7a64589b0bc62!2z5p-P5YKy5bGx!5e0!3m2!1szh-TW!2shk!4v1602819132709!5m2!1szh-TW!2shk"  frameborder="0" style="border:0;margin-top:5%" allowfullscreen="" aria-hidden="false" tabindex="0" id="location"></iframe>
+
+<div id="first">
+  <div class="proprety" id="pOne">
+    <table id="propertyDetail">
+      <tr>
+        <th>Status</th>
+        <td>On Sale</td>
+      </tr>
+      <tr>
+        <th>Selling Status</th>
+        <td>Sales</td> 
+      </tr>
+      <tr>
+        <th>Owner Name</th>
+        <td>Kenji To</td>
+      </tr>
+      <tr>
+        <th>Building Age</th>
+        <td>15 year</td>
+      </tr>
+      <tr>
+        <th>Floor</th>
+        <td>21/F</td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td>The Pavilia Farm (Sha Tin)</td>
+      </tr>
+      <tr>
+        <th>Square Feet</th>
+        <td>582"</td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td>6,673,000</td>
+      </tr>
+      <tr>
+        <th>Agent Incharge</th>
+        <td>Wu Chi Ho(<a href="PropertyAgentcm_manager.html"> view comment</a>)</td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>6249 1824</td>
+      </tr>
+      <tr>
+        <th>Duration on Sale</th>
+        <td>17-9-2021</td>
+      </tr>
+      <tr>
+        <th>Discount</th>
+        <td>buy before 2021 90% off</td>
+      </tr>
+      <tr>
+        <th>Descriptions</th>
+        <td>Big environment with clear view</td>
+      </tr>
+    </table>
+  </div>
+  <img id="mainPhoto" src="photo/1.jpg" />
+  <div id="multiPhoto">
+    <div>
+      <img id="displayPhoto1"  onclick="document.getElementById('mainPhoto').src='photo/1.jpg'" src="photo/1.jpg" />
+    </div>
+    <div>
+      <img id="displayPhoto2"  onclick="document.getElementById('mainPhoto').src='photo/11.jpg'" src="photo/11.jpg" />
+    </div>
+    <div>
+      <img id="displayPhoto3"  onclick="document.getElementById('mainPhoto').src='photo/12.jpg'" src="photo/12.jpg" />
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container">
+    <button id="close"></button>
+    <h1>New Property Agent</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email1" required>
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="name"><b>Age</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="name"><b>PhoneNumber</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pw" id="pw1" required>
+
+    <button  class="btn" id="signup">Create</button>
+  </form>
+</div>
+</body>
+</html>

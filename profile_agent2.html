@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="4506.css">
+    <title>profile</title>
+    <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".form-container").hide();
+        $("#createAc").click(function(){ 
+            $(".form-container").show();
+            document.getElementById('blur').style.filter = 'blur(10px)';
+        });
+        $("#close").click(function(){ 
+          $(".form-container").hide();
+            document.getElementById('blur').style.filter = 'none';
+        });
+        $(".district").click(function(){ 
+          var district = document.getElementsByName('district');
+          for(i=1;i<=3;i++){
+            if(district[i].checked==true){
+             unchecked(district[0]);
+            }
+          }
+        });
+        $("#dAll").click(function(){ 
+          var district = document.getElementsByName('district');
+          for(i=1;i<=3;i++){
+            if(district[0].checked==true){
+             unchecked(district[i]);
+            }
+          }
+        });
+        $(".size").click(function(){ 
+          var size = document.getElementsByName('size');
+          for(i=1;i<=3;i++){
+            if(size[i].checked==true){
+             unchecked(size[0]);
+            }
+          }
+        });
+        $("#sAll").click(function(){ 
+          var size = document.getElementsByName('size');
+          for(i=1;i<=3;i++){
+            if(size[0].checked==true){
+             unchecked(size[i]);
+            }
+          }
+        });
+          $(".price").click(function(){ 
+            var price = document.getElementsByName('price');
+            for(i=1;i<=3;i++){
+              if(price[i].checked==true){
+                unchecked(price[0]);
+              }
+            } 
+          });
+          $("#pAll").click(function(){ 
+          var price = document.getElementsByName('price');
+          for(i=1;i<=3;i++){
+            if(price[0].checked==true){
+             unchecked(price[i]);
+            }
+          }
+        });
+        $("#search").click(function(){ 
+          $(".proprety").hide();
+          var distract = document.getElementsByName('district');
+          if(distract[0].checked==true){
+            $(".proprety").show();
+          }
+          if(distract[1].checked==true){
+            $("#pOne").show();
+            $("#pThree").show();
+            $("#pEight").show();
+          }
+          if(distract[2].checked==true){
+            $("#pTwo").show();
+            $("#pFour").show();
+            $("#pSix").show();
+          }
+          if(distract[3].checked==true){
+            $("#pFive").show();
+            $("#pSeven").show();
+          }
+          var size = document.getElementsByName('size');
+          if(size[1].checked==true){
+            $("#pFour").show();
+            $("#pFive").show();
+            $("#pSix").show();
+          }  
+        });   
+        $("#btnLogOut").click(function(){  
+          alert("Log out successful");
+          window.location.assign("homePage.html");    
+        });  
+      });
+      function unchecked(x){
+        var seleceted = x;
+          if(seleceted.checked==true){
+            x.checked=false;
+          }
+      }
+  </script>
+</head>
+<body>
+    
+  <div class="blur" id="blur">
+    <div id="big">
+      <a href="propertyIncharge.html"><img id="icon" src="photo/2.png" /></a>
+      <div id="space"></div>
+      <div class ="logInName" >
+          <div><a>Welcome!</a></div>
+          <div><a id="mainName">WuChiHo</a></div>
+          <div><button id="btnLogOut">log out</button></div>
+    </div> 
+  </div> 
+  </div>
+  <div id="menuBar">
+    <div><a href="profile_agent.html"><button class="menuBtn">change profile</button></a></div>
+    <div><a href="new_property.html"><button class="menuBtn">create new property</button></a></div>
+    <div><a href="profile_manager.html"><button class="menuBtn">view user comment</button></a></div>          
+</div>
+      <h1>Profile</h1>
+      <br><br><br>
+      <div id="profileJust">
+      <div class="profileMananger1">
+      <h2>Your old profile</h2>
+      <table id="formRes">
+        <tr>
+            <th>ID:</th>
+            <td><input type="text" value="P001" readonly></td>
+          </tr>
+        <tr>
+          <th>Name:</th>
+          <td><input type="text" value="Wu Chi Ho" readonly></td>
+        </tr>
+        <tr>
+          <th>Age:</th>
+          <td><input type="number" id="ageRes" value="24" readonly></td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td><input type="text" id="emailRes" value="wch@email.com" readonly></td>
+        </tr>
+        <tr>
+          <th>Phone number:</th>
+          <td><input type="tel" name="name" value="67892345" readonly></td>
+        </tr>
+    </table>
+    </div>
+    <div class="vl"></div>
+    <div class="profileMananger">
+        <h2>New profile</h2>
+        <table id="formRes">
+            <th>Name:</th>
+            <td><input type="text" ></td>
+          </tr>
+          <tr>
+            <th>Age:</th>
+            <td><input type="number" id="ageRes"></td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td><input type="text" id="emailRes" ></td>
+          </tr>
+          <tr>
+            <th>Phone number:</th>
+            <td><input type="tel" ></td>
+          </tr>
+          <tr>
+            <td><button id="rePro">Update</button></td>
+            <td><button id="rePro">Reset</button></td>
+          </tr>
+      </table>
+      </div>
+    </div>
+</div>
+<form action="" class="form-container">
+  <button id="close"></button>
+  <h1>New Property Agent</h1>
+
+  <label for="email"><b>Email</b></label>
+  <input type="text" placeholder="Enter Email" name="email" id="email1" required>
+  <label for="name"><b>Name</b></label>
+  <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+  <label for="name"><b>Age</b></label>
+  <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+  <label for="name"><b>PhoneNumber</b></label>
+  <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="pw" id="pw1" required>
+
+  <button  class="btn" id="signup">Create</button>
+</form>
+</body>
+</html>

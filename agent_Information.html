@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>agent information</title>
+    <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="jslib/jquery-ui.js"></script>
+    <link rel="stylesheet" href="4506.css">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".form-container").hide();
+        $("#createAc").click(function(){ 
+            $(".form-container").show();
+            document.getElementById('blur').style.filter = 'blur(10px)';
+        });
+        $("#close").click(function(){ 
+          $(".form-container").hide();
+            document.getElementById('blur').style.filter = 'none';
+        });
+            $(".addbtn").click(function(){
+                $(".form-container").show();
+            });
+
+            $(".addbtn").dblclick(function(){
+                $(".form-container").hide();
+            });
+
+            $(".searchbtn").click(function(){
+                var index = document.getElementById("filter").value;
+                if(index == "1"){
+                    $(".2").css("font-weight","normal");
+                    $(".2").css("color","black");
+                    $(".3").css("font-weight","normal");
+                    $(".3").css("color","black");
+                    $(".1").css("font-weight","bold");
+                    $(".1").css("color","red");
+                }else if(index == "2"){
+                    $(".1").css("font-weight","normal");
+                    $(".1").css("color","black");
+                    $(".3").css("font-weight","normal");
+                    $(".3").css("color","black");
+                    $(".2").css("font-weight","bold");
+                    $(".2").css("color","red");
+                }else if(index == "3"){
+                    $(".2").css("font-weight","normal");
+                    $(".2").css("color","black");
+                    $(".1").css("font-weight","normal");
+                    $(".1").css("color","black");
+                    $(".3").css("font-weight","bold");
+                    $(".3").css("color","red");
+                }
+            });
+            $("#signup").click(function(){ 
+            alert("Welcome Tai Man");
+            $("#creatAgent").show();
+            $(".form-container").hide();
+            document.getElementById('blur').style.filter = 'none';
+
+        });
+            
+            $("#activeK").click(function(){ 
+                if(confirm("Make the Account Active?")) {       
+                $(".kenji").text("Active");
+                }
+            });
+
+            $("#disableK").click(function(){
+                if(confirm("Disable the Account?")) {       
+                $(".kenji").text("Disable");
+                }
+            });
+            $("#btnLogOut").click(function(){  
+          alert("Log out successful");
+          window.location.assign("homePage.html");    
+        }); 
+
+        });
+
+        function createRow(){
+            var email = document.getElementById('email1').value;
+                var name = document.getElementById("name").value;
+                var id = document.getElementById("id").value;
+                var password = document.getElementById("password").value;
+                var table = document.getElementById("account");
+                var row = table.insertRow(0);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
+                cell1.innerHTML = "NEW CELL1";
+        }
+    
+    </script>
+    <style>
+        #activeK, #disableK{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        #account{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .double-table{
+            margin-top: 0px;
+            margin-left: -100px;
+            margin-right: auto;
+        }
+
+        .double-table td{
+            padding-left: 300px;
+        }
+
+        .flex-container{
+            justify-content: flex-end;
+            display: flex;
+            background-color:green;
+            padding: 10px;
+            margin: -10px -10px 0px -10px;
+        }
+
+        .content-table {
+            border-collapse: collapse;
+            margin: 10px;
+            font-size: 0.9em;
+            width: 1000px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        }
+
+        .content-table thead tr{
+            background-color: #009879;
+            color: white;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr{
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .content-table tbody tr:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
+
+        .content-table tbody tr:last-of-type{
+            border-bottom: 2px solid #009879;
+        }
+        #search{
+            background-color: rgb(125, 224, 125);
+            width: 70px;
+            border-radius: 100px;
+        }
+        #creatAgent{
+            display: none;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="blur" id="blur">
+        <div id="big">
+            <a href="homePageManager.html"><img id="icon" src="photo/2.png" /></a>
+            <div id="space"></div>
+            <div class ="logInName" >
+                <div><a>Welcome!</a></div>
+                <div><a id="mainName">tony</a></div>
+                <div><button id="btnLogOut">log out</button></div>
+          </div> 
+        </div>
+        <div id="menuBar">
+            <div><a href="profile_manager.html"><button class="menuBtn">profile</button></a></div>
+            <div><button class="menuBtn" id="createAc">Create Account</button></div>
+            <div class="dropdown">
+              <button class="menuBtn">View</button>
+              <div class="dropdown-content">
+                <a href="user_Information.html">user information</a>
+                <a href="agent_Information.html">Property Agent</a>
+              </div>
+            </div>
+          </div>
+      <h1>Property Agent Information</h1>
+     <table class="double-table">
+         <tr>    
+    <td>
+
+
+    <select name="filter" id="filter">
+        <option value="1">Chan Ho Chi</option>
+        <option value="2">Wu Chi Ho</option>
+        <option value="3">Lo Dai Wai</option>
+    </select>
+    <button id="search" class="searchbtn">Search</button>
+
+    <table id="account" class="content-table"> 
+        <thead>
+        <tr>
+            <th>Account ID</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone Number</th>
+            <th>comment</th>
+            <th>Active/Disable</th>
+            <th>Modify Account</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr class="2">
+                <td>P001</td>
+                <td>wch@email.com</td>
+                <td>Wu Chi Ho</td>
+                <td>28</td>
+                <td>6249 1824</td>
+                <td><a href="PropertyAgentcm_manager.html">view</a></td>
+                <td class="kenji">Active</td>
+                <td><img id="activeK" src="photo/tick.png">
+                    <img id="disableK" src="photo/delete_icon.jpg">
+                </td>
+            </tr>
+        <tr class="1">
+            <td>P002</td>
+            <td>chc@email.com</td>
+            <td>Chan Ho Chi</td>
+            <td>24</td>
+            <td>9712 4928</td>
+            <td><a href=" ">view</a></td>
+            <td class="tony">Active</td>
+            <td><img id="activeK" src="photo/tick.png">
+                <img id="disableK" src="photo/delete_icon.jpg">
+            </td>
+        </tr>
+
+        <tr class="3">
+            <td>P003</td>
+            <td>david@email.com</td>
+            <td>Lo Dai Wai</td>
+            <td>32</td>
+            <td>6542 9872</td>
+            <td><a href=" ">view</a></td>
+            <td class="arlung">Active</td>
+            <td><img id="activeK" src="photo/tick.png">
+                <img id="disableK" src="photo/delete_icon.jpg">
+            </td>
+        </tr>
+
+        <tr class="4">
+            <td>P004</td>
+            <td>fatfung@email.com</td>
+            <td>Fat Chai Fung</td>
+            <td>42</td>
+            <td>6543 1888</td>
+            <td><a href=" ">view</a></td>
+            <td class="arlung">Disable</td>
+            <td><img id="activeK" src="photo/tick.png">
+                <img id="disableK" src="photo/delete_icon.jpg">
+            </td>
+        </tr>
+        <tr class="5" id="creatAgent">
+            <td>P005</td>
+            <td>taiman@email.com</td>
+            <td>Chan Tai Man</td>
+            <td>30</td>
+            <td>9876 2345</td>
+            <td><a href=" ">view</a></td>
+            <td class="arlung">Active</td>
+            <td><img id="activeK" src="photo/tick.png">
+                <img id="disableK" src="photo/delete_icon.jpg">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</td>
+</tr>
+</table>
+</div>
+<form action="" class="form-container">
+    <button id="close"></button>
+    <h1>New Property Agent</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email1" required>
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="name"><b>Age</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="name"><b>PhoneNumber</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name1" required>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pw" id="pw1" required>
+
+    <button  class="btn" id="signup">Create</button>
+  </form>
+</body>
+</html>

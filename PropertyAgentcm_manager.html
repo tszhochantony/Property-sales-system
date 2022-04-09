@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>comment</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="4506.css">
+    <script>
+        function cmFunction(){
+            var person = prompt("Please Leave Your Comment About The Agent");
+            if(person != ""){
+                var rating = prompt("Please Rate The Agent 1-5 Stars");
+                if(rating != ""){
+                    alert("Thanks For Your Comment and Rating!");
+                }
+            }
+        }
+    </script>
+    <style>
+        .wrapper{
+            margin-top: 100px;
+            margin-left: 350px;
+            width:400px;
+            display: flex;
+            box-shadow: 0 1px 20px 0 rgba(53, 62, 66, 0.4);
+        }
+
+        .wrapper .left{
+            width:35%;
+            background: linear-gradient(to right, #01a9ac, #01dbdf);
+            padding: 30px 25px;
+            border-top-left-radius:5px;
+            border-bottom-left-radius:5px;
+            text-align:center;
+            color:black;
+
+        }
+
+        .row1, .row2{
+            display: flex;
+        }
+
+        .usercm{
+            margin-top: 50px;
+            width: 500px;
+            display:flex;
+        }
+
+        .userimg{
+            width:240px;
+        }
+
+        .cmbtn{
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        .usercmimg{
+            width:150px;
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="big">
+        <a href="homePageManager.html"><img id="icon" src="photo/2.png" /></a>
+        <div id="space"></div>
+        <div class ="logInName">
+            <div><a>Welcome!</a></div>
+            <div><a id="mainName">tony</a></div>
+            <div><button id="btnLogOut">log out</button></div>
+      </div> 
+    </div>
+  <div id="menuBar">
+    <div><a href="profile_manager.html"><button class="menuBtn">profile</button></a></div>
+    <div><button class="menuBtn" id="createAc">Create Account</button></div>
+    <div class="dropdown">
+      <button class="menuBtn">View</button>
+      <div class="dropdown-content">
+        <a href="user_Information.html">user information</a>
+        <a href="agent_Information.html">Property Agent</a>
+      </div>
+    </div>
+  </div> 
+
+    <div class="wrapper">
+        <div class="left">
+        <h4>Wu Chi Ho</h4>
+        <p>Property Agent</p>
+    </div>
+        <div class="info">
+            <div class="agentemail">
+                <h3>Agent Email</h3>
+                <p>wch@email.com</p>
+            </div>
+            <div class="rating">
+            <h3>Average Rating</h3>
+            <p>3.6 Stars</p>
+        </div>
+        <button id="comment" class="cmbtn" onclick="cmFunction()">Comment</button>
+        </div>
+    </div>
+
+    <div class="row1">
+    <div class="usercm">
+        <div class="userimg">
+            <img class="usercmimg" src="photo/usercm.png">
+        </div>
+        <div class="cm">
+            <h3>Comment:</h3>
+            <p>Kind Agent and Helpful</p>
+            <h3>Rating:</h3>
+            <p>3.5 Stars</p>
+        </div>    
+    </div>
+    <div class="usercm">
+        <div class="userimg">
+            <img class="usercmimg" src="photo/usercm.png">
+        </div>
+        <div class="cm">
+            <h3>Comment:</h3>
+            <p>24 hours online</p>
+            <h3>Rating:</h3>
+            <p>3.7 Stars</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="row2">
+        <div class="usercm">
+            <div class="userimg">
+                <img class="usercmimg" src="photo/usercm.png">
+            </div>
+            <div class="cm">
+                <h3>Comment:</h3>
+                <p>Nice attitude and Patience</p>
+                <h3>Rating:</h3>
+                <p>3.6 Stars</p>
+            </div>    
+        </div>
+        <div class="usercm">
+            <div class="userimg">
+                <img class="usercmimg" src="photo/usercm.png">
+            </div>
+            <div class="cm">
+                <h3>Comment:</h3>
+                <p>Respond to Phone Calls immediately</p>
+                <h3>Rating:</h3>
+                <p>3.5 Stars</p>
+            </div>
+        </div>
+        </div>
+    
+</body>
+</html>
